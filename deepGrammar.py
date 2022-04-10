@@ -49,7 +49,7 @@ async def main():
     # Write only the transcript to the console
     return response["results"]["channels"][0]["alternatives"][0]["transcript"]
 
-def checkGrammer(data):
+def checkGrammar(data):
 
     tool = language_tool_python.LanguageTool('en-US')
     matches = tool.check(data)
@@ -66,7 +66,7 @@ def formatAndPrint(data='',matches=[],corrected=''):
 
 
     print('***'*30)
-    print('Grammer mistakes & Improvements')
+    print('Grammar mistakes & Improvements')
     print('***'*30)
     for match in matches:
         incorrect_text = match.sentence.replace(match.matchedText, '\033[44;33m{}\033[m'.format(match.matchedText))
@@ -92,7 +92,7 @@ try:
 
   # For Testing without deepgram uncomment this -------
   # result = "another big problem in the speech analytics space. When customers first bring the software on, is that they they are blown away by the fact that an engine can monitor hundreds of Kpis. Right? Everything from my new compliance issues to, you know, human human interaction, empathy measurements to upsell aptitude to closing aptitude. They're hundreds literally of Kpis that one could look at. And the speech analytics companies have typically gone to the customer and really bang that trump. We'll get all of these things that we're gonna help you keep an eye on. The reality, however, is that a company even a contact center manager, they can't keep track in their brain even if they have a report in front of. Of that many Kpis. Mh. And frankly, it's overwhelming. So what successful companies do is they bite off no more than they can chew at any given time. The reality is is you can only train a call center agent on a maximum of three skills at any given day. Right? And by focusing on focusing on problem areas, for a week for a month depending on how bad things are. And then once you've mastered that skill to take a baseline of of your performance and move on to the next worst skill. Right, is the way that companies succeed using this product?"
-  checkGrammer(result)
+  checkGrammar(result)
 
 except Exception as e:
   exception_type, exception_object, exception_traceback = sys.exc_info()
